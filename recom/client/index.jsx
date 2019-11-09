@@ -11,10 +11,10 @@ class Article extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello </h1>
+        <h1>Hello from :</h1>
         <List />
       </div>
     );
   }
 }
-ReactDOM.render(<Article />, document.getElementById("app"));
+ReactDOM.render(<Article />, document.getElementById("recom"));
