@@ -8,7 +8,7 @@
     
     "dev": "concurrently \"node post/server/index.js\" \"node recom/server/index.js\" \"node deals/server/index.js\" \"node server.js\"",
     "start": "npm run dev",
-    "heroku-postbuild": "npm start"
+    
   },
   "keywords": [],
   "author": "",
