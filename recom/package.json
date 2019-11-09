@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --config ./webpack.config.js --display-error-details",
+    "start": "node server/index.js",
     "watch": "webpack -d --watch --config ./webpack.config.js --display-error-details",
-    "start": "node server/index.js"
+    "build": "webpack -p --config ./webpack.config.js --display-error-details"
   },
   "keywords": [],
   "author": "",
