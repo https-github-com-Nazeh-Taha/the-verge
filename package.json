@@ -1,0 +1,22 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"node post/server/index.js\" \"node recom/server/index.js\" \"node deals/server/index.js\" \"node server.js\"",
+    "start": "npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  }
+}
