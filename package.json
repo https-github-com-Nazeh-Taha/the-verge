@@ -5,11 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "one": "node post/server/index.js",
-    "two": "node recom/server/index.js",
-    "tree": "node deals/server/index.js",
-    "fore": "node server.js",
-    "start": "run-p one two tree fore"
+    
+    "dev": "concurrently \"node post/server/index.js\" \"node recom/server/index.js\" \"node deals/server/index.js\" \"node server.js\"",
+    "start": "npm run dev",
+    "heroku-postbuild": "npm start"
   },
   "keywords": [],
   "author": "",
