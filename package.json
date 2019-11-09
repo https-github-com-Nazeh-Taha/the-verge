@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "concurrently": "^5.0.0",
     "http-proxy-middleware": "^0.20.0",
     "morgan": "^1.9.1"
   },
