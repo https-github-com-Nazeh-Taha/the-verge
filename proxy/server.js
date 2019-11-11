@@ -1,7 +1,5 @@
 var express = require("express");
-// var morgan = require("morgan");
 var path = require("path");
-// var proxy = require("http-proxy-middleware");
 
 const app = express();
 const port = process.env.PORT || 3000;
