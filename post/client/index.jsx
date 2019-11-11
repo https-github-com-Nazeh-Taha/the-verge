@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
-import List from "./components/List.jsx";
+import Post from "./components/Post.jsx";
+import Nav from "./components/Nav.jsx";
+import Next from "./components/Next.jsx";
 import "../public/style.css";
 class Article extends React.Component {
   constructor(props) {
@@ -11,8 +13,9 @@ class Article extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello form </h1>
-        <List />
+        <Nav />
+        <Post />
+        <Next />
       </div>
     );
   }
