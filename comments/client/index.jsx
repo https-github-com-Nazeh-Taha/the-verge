@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
-import List from "./components/List.jsx";
+import CommentForm from "./components/CommentForm.jsx";
+import CommentsList from "./components/CommentsList.jsx";
+
 import "../public/style.css";
-class Article extends React.Component {
+
+class CommentsModule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,10 +14,13 @@ class Article extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello from :</h1>
-        <List />
+        <h1>All Comments :</h1>
+        <CommentsList />
+        <CommentForm />
+        
+        
       </div>
     );
   }
 }
-ReactDOM.render(<Article />, document.getElementById("comments"));
+ReactDOM.render(<CommentsModule />, document.getElementById("comments"));
