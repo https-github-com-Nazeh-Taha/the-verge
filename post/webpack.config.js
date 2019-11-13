@@ -7,12 +7,14 @@ module.exports = {
     path: DIST_DIR,
     filename: "bundle.js"
   },
+  
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"]
       },
+      
       {
         test: /\.jsx$/,
         exclude: /(node_modules)/,
