@@ -1,26 +1,33 @@
 import React from "react";
-import $ from "jquery";
 
 
 class Comment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    // this.state = {
 
-    };
+    // };
 
   }
 
   render(){
     return(
-      <div>
-        <img src={this.props.comment.profilPic}></img>
-        <h2>{this.props.comment.userName}</h2>
-        <h5>{this.props.comment.createdAt}</h5>
-        <h3>{this.props.comment.body}</h3>
+      <div className = 'commentItem'>
+
+				<div className = 'commentItemHeader'>
+					<img className = 'autherAvatar' src = {this.props.comment.profilePic}/>
+					<h2 className='autherName'>{this.props.comment.autherName}</h2>
+				</div>
+        
+        
+        <p className = 'commentbody'>{this.props.comment.body}</p>
+				<p>Posted on 	<a>{this.props.comment.createdAt}</a> </p>
+
       </div>
-        )
-    }
+    )
+  }
 }
 
 export default Comment;
+
+
