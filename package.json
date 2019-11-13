@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",   
-    "dev": "node server.js",
+    "dev": "concurrently \"node post/server/index.js\" \"node recom/server/index.js\" \"node deals/server/index.js\" \"node server.js\"",
     "start": "npm run dev"
-    
     
   },
   "keywords": [],

@@ -172,7 +172,8 @@ li a {
 .page-creater-pink {
     color: #e2127a;
     border-right: 1px solid #6a6a6a;
-    margin: 3px;
+    margin: 5px;
+    padding-right: 7px;
 }
 
 #face-user {
