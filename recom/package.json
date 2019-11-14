@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server-dev": "nodemon server/index.js",
     "start": "node server/index.js",
     "watch": "webpack -d --watch --config ./webpack.config.js --display-error-details",
     "build": "webpack -p --config ./webpack.config.js --display-error-details"
@@ -13,8 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "@babel/preset-react": "^7.7.0",
+    "axios": "^0.19.0",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "mongoose": "^5.7.9",
