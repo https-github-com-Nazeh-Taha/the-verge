@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var path = require("path");
+var dbDeals = require('../database/database').Deal;
 const port = process.env.PORT || 3002;
 
 const URI = require('../config/keys.js').mongoURI;
@@ -19,9 +20,11 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "../public"));
-// });
+app.get('/deals', (req, res) => {
+  dbDeals.find({}).limit(3)
+  .then(deals => res.json(deals))
+  .catch(err => res.status(400).json('error',err));
+});
 app.listen(port, function() {
   console.log(`listening on port ${port}!`);
 });
