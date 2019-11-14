@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "watch": "webpack -d --watch --config ./webpack.config.js --display-error-details",
     "build": "webpack -p --config ./webpack.config.js --display-error-details"
   },
@@ -15,6 +15,7 @@
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
