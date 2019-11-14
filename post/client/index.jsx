@@ -25,10 +25,8 @@ class Article extends React.Component {
     this.setState({
       articls: data[0],
       topic: data[1],
-      auth: data[2],   
+      auth: data[2]
     })
-
-    data.length ? this.setState({loades: true}): false
     
   }
 
@@ -52,14 +50,10 @@ class Article extends React.Component {
     
     return (
       <div>
-        {this.state.loades ?
-        <div>
         <Nav />
         <Post topic = {this.state.topic} auth = {this.state.auth}/>
         <Next article = {this.state.articls} />
       </div>
-      :null}
-    </div>
     );
     
   }

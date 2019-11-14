@@ -8,9 +8,9 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "/")));
 
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "the-verge", "/index.html"));
-});
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "the-verge", "/index.html"));
+// });
 
 
 app.listen(port, () => {
