@@ -37,7 +37,7 @@ export default class List extends Component {
                 </span>
             </h3>
             <div className="c-list__body">
-              <ol>
+              <ul className="orderedlist">
                 <div>
                   {this.state.deals.map(item => {
                     return <li key={item.id}>
@@ -48,7 +48,7 @@ export default class List extends Component {
                   </li> 
                   })} 
                 </div> 
-              </ol>
+              </ul>
             </div>  
             <div className="c-list__cta">
               <a className="c-list__more" href="/good-deals">More in Good Deals</a>
