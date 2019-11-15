@@ -13,6 +13,7 @@ const Article = require("./data/db.js").Article;
 const Auther = require("./data/db.js").Auther;
 var dbDeals = require('./data/db.js').Deal;
 const CommentDB = require('./data/db.js');
+var RecomModel = require('./data/db.js');
 //------DataBase---------------------
 const URI = require('./config/keys').mongoURI;
 mongoose.connect(URI, {
@@ -51,6 +52,16 @@ app.get('/comments', (req, res) => {
       }
     res.json(data);
   });  
+});
+
+app.get("/recom", (req, res) => {
+  
+  RecomModel.RecomModel.find({})
+    .limit(6)
+    .then(data => 
+      res.json(data)
+    )
+    .catch(err => console.log("Error : " + err));
 });
 // app.get("/article", function(req, res) {
 // console.log('hello');

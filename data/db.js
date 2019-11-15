@@ -85,8 +85,16 @@ const commentSchema = Schema({
     type: String
   } 
 });
-
 const CommentModel = mongoose.model('comments', commentSchema);
+
+const RecomSchema = mongoose.Schema({
+    title: String,
+    img_url: String
+  });
+
+ const RecomModel =  mongoose.model("articles", RecomSchema);
+  
+module.exports.RecomModel = RecomModel;
 module.exports.CommentModel = CommentModel;  
 module.exports.Deal=Deal;
 module.exports.Auther = Auther;
