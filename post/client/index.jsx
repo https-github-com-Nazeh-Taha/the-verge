@@ -33,11 +33,12 @@ class Article extends React.Component {
 
 
   retriveData(){
-    console.log(window.location.href);
+    
     var that = this;
-    
+    var path = window.location.href.split("=");
+    var article_id = path[1];
     $.ajax({
-      url: "/article/5dc9b092a15d1f8a5d3fd345/5dc9c822bf4abd8c9eea9f24",
+      url: "/article/"+article_id,
       method: "GET",
       success: function(data){
         that.updateState(data)
@@ -47,16 +48,16 @@ class Article extends React.Component {
       }
     })
     
-    $.ajax({
-      url: "/article",
-      method: "GET",
-      success: function(data){
-        that.updateState(data)
-      },
-      error: function(error){
-        console.log(error);
-      }
-    })
+    // $.ajax({
+    //   url: "/article",
+    //   method: "GET",
+    //   success: function(data){
+    //     that.updateState(data)
+    //   },
+    //   error: function(error){
+    //     console.log(error);
+    //   }
+    // })
   }
 
   render() {

@@ -69,7 +69,7 @@ var Deal = mongoose.model('Deal', dealSchema);
 
 const commentSchema = Schema({
 	postId: {
-		type: Number
+		type: String
 	},
   profilePic:{
     type: String

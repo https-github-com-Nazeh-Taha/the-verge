@@ -29,12 +29,15 @@ db.once('open', function () {
 });
 app.use(express.static(path.join(__dirname, "/")));
 //----------post----------------
-app.get('/article', function(req, res){
+app.get("/article/:id", (req, res) => {
+  var auth_id = "5dc9b092a15d1f8a5d3fd345";
+  var id = req.params.id;
   Promise.all([
-  Article.find({auth_id: "5dc9b092a15d1f8a5d3fd345"}).limit(5),
-  Article.find({_id: "5dc9c822bf4abd8c9eea9f24"}),
-  Auther.find({_id: "5dc9b092a15d1f8a5d3fd345"})
-]).then(authers => res.json(authers));
+    Article.find({auth_id: auth_id}).limit(5),
+    Article.find({_id: id}),
+    Auther.find({_id: auth_id})
+  ]).then(authers => res.json(authers))
+  
 });
 //-----------deals-------
 app.get('/deals', (req, res) => {
@@ -44,17 +47,18 @@ app.get('/deals', (req, res) => {
 });
 
 //---------------Comments----------------
-app.get('/comments', (req, res) => {
-
-  CommentDB.CommentModel.find({postId: 1 }, function(err, data){
+app.get('/comments/:id', (req, res) => {
+  var id = req.params.id;
+  console.log(id);
+  CommentDB.CommentModel.find({postId: id }, function(err, data){
     if (err) {
-    console.log('Error');
-      }
+      console.log('Error');
+    }
     res.json(data);
-  });  
-});
+  })
+ });
 
-app.get("/recom", (req, res) => {
+app.get("/recom/", (req, res) => {
   
   RecomModel.RecomModel.find({})
     .limit(6)
@@ -63,26 +67,7 @@ app.get("/recom", (req, res) => {
     )
     .catch(err => console.log("Error : " + err));
 });
-// app.get("/article", function(req, res) {
-// console.log('hello');
-// });
 
-// app.get('/article', function(req, res){ 
-//   request("http://localhost:3001/bundle.js", function (error, response, body) { 
-//     if (!error && response.statusCode === 200) { 
-      
-//       res.send(body); 
-//     } 
-//    }); 
-// });
-// app.get('*', function(req, res){ 
-//   request("http://localhost:3001/bundle.js", function (error, response, body) { 
-//     if (!error && response.statusCode === 200) { 
-      
-//       res.send(body); 
-//     } 
-//    }); 
-// });
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
