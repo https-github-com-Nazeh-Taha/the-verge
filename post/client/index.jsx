@@ -8,14 +8,43 @@ import "../public/style.css";
 class Article extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      articls: [],
+      topic: [],
+      auth: []
+    }
+    this.retriveData();
   }
+
+  updateState(data){
+    this.setState({
+      articls: data[0],
+      topic: data[1],
+      auth: data[2]
+    })
+    
+  }
+
+  retriveData(){
+    var that = this;
+    $.ajax({
+      url: "/article",
+      method: "GET",
+      success: function(data){
+        that.updateState(data)
+      },
+      error: function(error){
+        console.log(error);
+      }
+    })
+  }
+
   render() {
     return (
       <div>
         <Nav />
-        <Post />
-        <Next />
+        <Post topic = {this.state.topic} auth = {this.state.auth}/>
+        <Next article = {this.state.articls} />
       </div>
     );
   }

@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../public/style.css";
 import $ from "jquery";
+import List from "./components/List.jsx";
+import axios from "axios";
+import "../public/style.css";
 class Recommended extends React.Component {
   constructor(props) {
     super(props);
@@ -24,11 +27,11 @@ class Recommended extends React.Component {
       }
     });
   }
+
   render() {
     return (
       <div className="recom-container">
         <h2 className="recom-header">RECOMMENDED</h2>
-
         <div className="recom-items">
           <ul className="recom-list">
             {this.state.items.map(function(item, i) {
@@ -43,6 +46,7 @@ class Recommended extends React.Component {
             })}
           </ul>
         </div>
+        ]
       </div>
     );
   }
