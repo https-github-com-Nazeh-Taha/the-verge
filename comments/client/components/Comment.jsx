@@ -16,7 +16,8 @@ class Comment extends React.Component {
 
 				<div className = 'commentItemHeader'>
 					<img className = 'autherAvatar' src = {this.props.comment.profilePic}/>
-					<h2 className='autherName'>{this.props.comment.autherName}</h2>
+					<h5 className = 'autherName'>{this.props.comment.autherName}</h5>
+          
 				</div>
         
         

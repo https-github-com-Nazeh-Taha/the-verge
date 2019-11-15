@@ -15,7 +15,7 @@
 .mainDiv {
     margin-bottom: 1.56rem;
     padding: 0;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     flex-wrap: nowrap;
     /* margin: 16px 0 0; */
@@ -28,9 +28,7 @@
 }
 
 .mainSection {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
+    margin: 30px 0 30px 10px;
     min-width: 0;
     width: 70%;
     float: left;
@@ -93,9 +91,14 @@
 
 .commentItem a {
     color: #e2127A;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    margin-left: 3px;
+    
 }
 
-.autherName {
+.commentItemHeader h5 {
     display: inline-block;
     margin-right: 4px;
     transition: color .1s,background-color .1s,fill .1s;
@@ -105,6 +108,13 @@
     /* text-rendering: optimizeLegibility; */
     /* vertical-align: inherit; */
     margin-left: 8px;
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;
+    font-weight: normal;
+}
+.commentItem p{
+    font-size: 13px;
+    color: #424242;
 }
 
 .commentbody {
@@ -114,5 +124,7 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    /* font-family: Helvetica, sans-serif; */
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    color: #424242;
 }
