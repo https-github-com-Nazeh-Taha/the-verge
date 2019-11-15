@@ -5,7 +5,7 @@ import Post from "./components/Post.jsx";
 import Nav from "./components/Nav.jsx";
 import Next from "./components/Next.jsx";
 import "../public/style.css";
-import { FaFlushed } from "react-icons/fa";
+
 
 class Article extends React.Component {
   constructor(props) {
@@ -13,13 +13,14 @@ class Article extends React.Component {
     this.state = {
       articls: [],
       topic: [],
-      auth: [],
-      loades: false
+      auth: []
     }
-    this.retriveData();
+    
   }
 
- 
+  componentDidMount(){
+    this.retriveData();
+  }
 
   updateState(data){
     this.setState({
@@ -30,9 +31,21 @@ class Article extends React.Component {
     
   }
 
+
   retriveData(){
-    
+    console.log(window.location.href);
     var that = this;
+    
+    $.ajax({
+      url: "/article/5dc9b092a15d1f8a5d3fd345/5dc9c822bf4abd8c9eea9f24",
+      method: "GET",
+      success: function(data){
+        that.updateState(data)
+      },
+      error: function(error){
+        console.log(error);
+      }
+    })
     
     $.ajax({
       url: "/article",
@@ -47,7 +60,6 @@ class Article extends React.Component {
   }
 
   render() {
-    
     return (
       <div>
         <Nav />

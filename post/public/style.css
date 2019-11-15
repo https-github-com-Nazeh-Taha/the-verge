@@ -28,6 +28,9 @@ div {
     width: 10%;
     margin-left: 390px;
 }
+#logo ul{
+    margin-bottom: 0;
+}
 
 #logo-home {
     color: white;
@@ -228,7 +231,7 @@ h2{
     width: 4px;
     height: 100%;
     top: 0;
-    right: 505px;
+    right: 495px;
     transform: skew(30deg);
 }
 
@@ -236,7 +239,7 @@ h2{
     content: '';
     position: absolute;
     background-color: #424242;
-    width: 33%;
+    width: 34%;
     height: 3px;
     top: 0;
     left: -3px;

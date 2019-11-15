@@ -24,15 +24,32 @@ db.once('open', function () {
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/article", (req, res) => {
+
+app.get("/article/:auth_id/:id", (req, res) => {
+  var auth_id = req.params.auth_id;
+  var id = req.params.id;
   Promise.all([
-    Article.find({auth_id: "5dc9b092a15d1f8a5d3fd345"}).limit(5),
-    Article.find({_id: "5dc9c822bf4abd8c9eea9f24"}),
-    Auther.find({_id: "5dc9b092a15d1f8a5d3fd345"})
-  ]).then(authers => res.json(authers));
-    
- 
+    Article.find({auth_id: auth_id}).limit(5),
+    Article.find({_id: id}),
+    Auther.find({_id: auth_id})
+  ]).then(authers => res.json(authers))
+  
 });
+
+app.get('/article', function(req, res){
+  Promise.all([
+  Article.find({auth_id: "5dc9b092a15d1f8a5d3fd345"}).limit(5),
+  Article.find({_id: "5dc9c822bf4abd8c9eea9f24"}),
+  Auther.find({_id: "5dc9b092a15d1f8a5d3fd345"})
+]).then(authers => res.json(authers));
+});
+
+
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "../public"));
+});
+
 
 
 app.listen(port, function () {
