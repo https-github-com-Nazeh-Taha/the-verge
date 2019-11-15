@@ -66,7 +66,28 @@ var dealSchema = mongoose.Schema({
   });
   
 var Deal = mongoose.model('Deal', dealSchema);
-  
+
+const commentSchema = Schema({
+	postId: {
+		type: Number
+	},
+  profilePic:{
+    type: String
+  },
+  autherName: {
+    type: String
+  } ,
+  createdAt: {
+    type: String,
+    // default: Date.now
+  },
+  body:{
+    type: String
+  } 
+});
+
+const CommentModel = mongoose.model('comments', commentSchema);
+module.exports.CommentModel = CommentModel;  
 module.exports.Deal=Deal;
 module.exports.Auther = Auther;
 module.exports.Article = Article;

@@ -12,6 +12,7 @@ const bodyParser = require("body-parser");
 const Article = require("./data/db.js").Article;
 const Auther = require("./data/db.js").Auther;
 var dbDeals = require('./data/db.js').Deal;
+const CommentDB = require('./data/db.js');
 //------DataBase---------------------
 const URI = require('./config/keys').mongoURI;
 mongoose.connect(URI, {
@@ -39,6 +40,17 @@ app.get('/deals', (req, res) => {
   dbDeals.find({}).limit(3)
   .then(deals => res.json(deals))
   .catch(err => res.status(400).json('error',err));
+});
+
+//---------------Comments----------------
+app.get('/comments', (req, res) => {
+
+  CommentDB.CommentModel.find({postId: 1 }, function(err, data){
+    if (err) {
+    console.log('Error');
+      }
+    res.json(data);
+  });  
 });
 // app.get("/article", function(req, res) {
 // console.log('hello');
