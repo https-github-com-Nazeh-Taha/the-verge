@@ -25,14 +25,34 @@ const CommentDB = require('../database/db.js');
 
 
 app.get('/comments', (req, res) => {
+
+  CommentDB.CommentModel.find({postId: 1 }, function(err, data){
+    if (err) {
+    console.log('Error');
+      }
+    res.json(data);
+  });
   
-  CommentDB.findAll(function(err, allComments){
-    if(err) {
-      console.log('Error in retrieving comments from database!!')
-    }
-    res.json(allComments);
-  })
+  // CommentDB.findAll(function(err, allComments){
+  //   if(err) {
+  //     console.log('Error in retrieving comments from database!!')
+  //   }
+  //   res.json(allComments);
+  // })
+  
 });
+
+// app.get('/comments/:id', (req, res) => {
+  
+//   var id = req.params.id;
+
+//   CommentDB.CommentModel.find({postId: id }, function(err, data){
+//     if (err) {
+//       console.log('Error');
+//     }
+//     res.json(data);
+//   })
+// });
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "../public"));

@@ -26,9 +26,33 @@ class CommentsModule extends React.Component {
 
 
 
+  // getData(){
+
+  //   console.log(this.state.data);
+  //   var that = this;
+  //   var path = window.location.href.split("=");
+  //   var id = parseInt(path[1]);
+  //   console.log(id);
+
+  //   $.ajax({
+  //     type: 'GET',
+  //     url:'/comments/'+id,
+  //     success: function(res) {
+  //       //var myData = JSON.stringify(res);
+  //       that.updateStatus(res);
+  //       console.log(that.state.data);
+
+  //     }
+
+
+  //   });
+  // }
+
   getData(){
+    
     console.log(this.state.data);
     var that = this;
+
     $.ajax({
       type: 'GET',
       url:'/comments',
