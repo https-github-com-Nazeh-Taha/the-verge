@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "watch": "webpack -d --watch --config ./webpack.config.js --display-error-details",
     "build": "webpack -p --config ./webpack.config.js --display-error-details"
   },
