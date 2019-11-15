@@ -7,7 +7,8 @@
     "start": "node server/index.js",
     "watch": "webpack -d --watch --config ./webpack.config.js --display-error-details",
     "build": "webpack -p --config ./webpack.config.js --display-error-details",
-    "seed-database": "node seed.js"
+    "seed-database": "node seed.js",
+    "live-server": "nodemon server/index.js"
   },
   "keywords": [],
   "author": "",

@@ -22,6 +22,7 @@ db.once('open', function() {
 const CommentDB = require('../database/db.js');
 
 
+
 app.get('/comments', (req, res) => {
   
   CommentDB.findAll(function(err, allComments){
@@ -33,9 +34,15 @@ app.get('/comments', (req, res) => {
 });
 
 
+
 app.get("*", (req, res) => {
+  
   res.sendFile(path.join(__dirname + "../public"));
 });
 app.listen(port, function() {
   console.log(`listening on port ${port}!`);
 });
+
+
+
+

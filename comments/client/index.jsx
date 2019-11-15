@@ -17,11 +17,17 @@ class CommentsModule extends React.Component {
       data: []
     };
 
+    this.getData = this.getData.bind(this);
+  }
+
+  componentDidMount(){
     this.getData();
   }
 
+
+
   getData(){
-   // console.log(this.state.data);
+    console.log(this.state.data);
     var that = this;
     $.ajax({
       type: 'GET',
@@ -29,7 +35,7 @@ class CommentsModule extends React.Component {
       success: function(res) {
         //var myData = JSON.stringify(res);
         that.updateStatus(res);
-        //console.log(that.state.data);
+        console.log(that.state.data);
 
       }
 
@@ -48,7 +54,7 @@ class CommentsModule extends React.Component {
 
         <div className = 'mainSection'>
           <div className = 'commentsHeader'>
-            <h1 className = 'commentsCount'>THERE ARE {data.length} COMMENTS</h1>
+            <h1 className = 'commentsCount'>THERE ARE {this.state.data.length} COMMENTS</h1>
           </div>
         
           <div className = 'commentslist'>

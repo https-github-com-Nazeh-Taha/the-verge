@@ -9,9 +9,9 @@
     margin: 0;
     padding: 0;
 }
-div {
+/* div {
     display: block;
-}
+} */
 .mainDiv {
     margin-bottom: 1.56rem;
     padding: 0;
@@ -81,13 +81,13 @@ div {
     
 }
 
-img {
+.commentItemHeader img {
     border: 0;
     max-width: 100%;
     cursor: pointer;
 }
 
-a {
+.commentItem a {
     color: #e2127A;
 }
 
