@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "dev": "nodemon server/index.js",
     "watch": "webpack -d --watch --config ./webpack.config.js --display-error-details",
-    "build": "webpack -p --config ./webpack.config.js --display-error-details"
+    "build": "webpack -p --config ./webpack.config.js --display-error-details",
+    "start": "node server/index.js"
   },
   "keywords": [],
   "author": "",
