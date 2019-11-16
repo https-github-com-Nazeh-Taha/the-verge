@@ -1,5 +1,6 @@
 # The-Verge
-RBK project
+Senior Phase Project.
+
 # Description:
 The verge is Front-End Capstone project, it's a simulation for the article page of "https://www.theverge.com/" website.
 # Modules:
