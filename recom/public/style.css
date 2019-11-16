@@ -1,38 +1,36 @@
-/*  Style for items */
-
-.grid-container {
-  display: grid;
-
-  grid-template-columns:
-    minmax(100px, max-content)
-    minmax(100px, max-content)
-    minmax(100px, max-content)
-    minmax(100px, max-content)
-    minmax(100px, max-content)
-    minmax(100px, max-content);
-  grid-template-areas:
-    "header  header . . . ."
-    "item-1-0 item-2-0 item-3-0 item-4-0 item-5-0 item-6-0"
-    "item-1-1 item-2-1 item-3-1 item-4-1 item-5-1 item-6-1";
-  grid-gap: 15px;
+.recom-container {
   margin: 0 auto;
-  max-width: 1100px;
   /* width: 70%; */
+  max-width: 1100px;
+}
+.recom-li {
+  display: inline-block;
+  /* margin-left: 15px; */
 }
 
-.grid-container > img {
-  width: 11vw;
-  height: 20vh;
+.recom-items {
+  display: inline;
+}
+.recom-items > ul {
+  display: inline;
+  list-style-type: none;
+}
+
+.img-item {
+  width: 157.2px;
+  height: 157.2px;
   opacity: 1;
   transition: all 750ms;
   cursor: pointer;
   direction: ltr;
   text-rendering: optimizeLegibility;
+  display: inline-block;
 }
 
-.grid-container > span {
-  width: 10vw;
-  height: 10vh;
+.title-item {
+  display: block;
+  width: 157.2px;
+  height: 157.2px;
   margin-top: 6px;
   margin-left: 5px;
   font-family: "adelle-sans", Helvetica, sans-serif;
@@ -44,64 +42,4 @@
   font-weight: bold;
   cursor: pointer;
   direction: ltr;
-}
-
-.header {
-  font-family: "Heroic", Arial Narrow, Helvetica, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.012em;
-  font-style: normal;
-  font-size: 1.5em;
-  color: #424242;
-  padding: 12px 8px 0 0;
-  font-weight: 600;
-}
-
-.item {
-  display: inline;
-}
-.header {
-  grid-area: header;
-  font-weight: 900;
-}
-.item-1-0 {
-  grid-area: item-1-0;
-}
-.item-1-1 {
-  grid-area: item-1-1;
-}
-
-.item-2-0 {
-  grid-area: item-2-0;
-}
-.item-2-1 {
-  grid-area: item-2-1;
-}
-
-.item-3-0 {
-  grid-area: item-3-0;
-}
-.item-3-1 {
-  grid-area: item-3-1;
-}
-
-.item-4-0 {
-  grid-area: item-4-0;
-}
-.item-4-1 {
-  grid-area: item-4-1;
-}
-
-.item-5-0 {
-  grid-area: item-5-0;
-}
-.item-5-1 {
-  grid-area: item-5-1;
-}
-
-.item-6-0 {
-  grid-area: item-6-0;
-}
-.item-6-1 {
-  grid-area: item-6-1;
 }
