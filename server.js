@@ -40,7 +40,7 @@ app.get("/article/:id", (req, res) => {
   
 });
 //-----------deals-------
-app.get('/deals', (req, res) => {
+app.get('/deals/', (req, res) => {
   dbDeals.find({}).limit(3)
   .then(deals => res.json(deals))
   .catch(err => res.status(400).json('error',err));
@@ -57,16 +57,22 @@ app.get('/comments/:id', (req, res) => {
     res.json(data);
   })
  });
-
-app.get("/recom/", (req, res) => {
-  
-  RecomModel.RecomModel.find({})
-    .limit(6)
-    .then(data => 
-      res.json(data)
-    )
+//---------------recom------------------
+ app.get("/recom/:id", (req, res) => {
+  const id = req.params.id;
+  Article.find({ _id: id }, { topic: 1 })
+    .then(data => {
+      var searchedTopic = data[0].topic;
+      Article.find({ topic: searchedTopic })
+        .limit(6)
+        .then(data => {
+          res.json(data);
+        })
+        .catch(err => console.log(err));
+    })
     .catch(err => console.log("Error : " + err));
-});
+ 
+ });
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
