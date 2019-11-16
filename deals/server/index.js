@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/../public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/deals', (req, res) => {
+app.get('/deals/:id', (req, res) => {
   dbDeals.find({}).limit(3)
   .then(deals => res.json(deals))
   .catch(err => res.status(400).json('error',err));
