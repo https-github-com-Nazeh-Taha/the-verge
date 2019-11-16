@@ -58,10 +58,6 @@ html {
 .fonts-loaded body {
     font-family: Helvetica, sans-serif;
 }
-.c-list {
-    background-color: #ffffff;
-    color: #424242;
-}
 .c-list__title:before {
     position: absolute;
     background-color: #393092;
@@ -202,7 +198,7 @@ a:-webkit-any-link {
 .c-list__title, .c-list__more {
     color: #e2127A;
 }
-.c-list ol, .c-list ul {
+.c-list ol {
     list-style-type: none;
     margin: 0;
 }
@@ -244,7 +240,7 @@ a:-webkit-any-link {
     /* list-style-type: decimal; */
     text-align: -webkit-match-parent;
 }
-.c-list ol, .c-list ul {
+.c-list ol {
     list-style-type: none;
     margin: 0;
 }
@@ -260,7 +256,7 @@ a:-webkit-any-link {
 .fonts-loaded .c-list li {
     font-family: Helvetica, sans-serif;
 }
-.c-list ol, .c-list ul {
+.c-list ol{
     list-style-type: none;
     margin: 0;
 }
@@ -271,7 +267,7 @@ a:-webkit-any-link {
     border: 0;
     max-width: 100%;
 }
-.c-list ol, .c-list ul {
+.c-list ol {
     list-style-type: none;
     margin: 0;
 }
@@ -295,8 +291,9 @@ a:-webkit-any-link {
 }
 .c-list__more:before{
     bottom:-10px;
-    left:0;
-    right:-4px
+    left:-101px;
+    right:-4px;
+    width: 106px;
 }
 .c-list__more {
     position: relative;
@@ -323,20 +320,19 @@ a:-webkit-any-link {
     max-width: 1100px;
     margin-top: 125px;
 }
-.c-list__body:after{
+.c-list:after{
     position:absolute;
     background-color:#393092;
     width:2px;
     content:"";
-    bottom:130px;
-    right:-1px;
-    top:-22px;
+    bottom:25px;
+    right:28px;
+    top:201px;
     z-index:1
 }
 .c-list{
     width:30%;
     float: right;
-    border-bottom: 1px solid #e7e7e8;
     padding: 16px 0;
     flex-grow: 0;
     flex-shrink: 1;
