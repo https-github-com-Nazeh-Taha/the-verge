@@ -5,7 +5,7 @@ module.exports = {
   entry: SRC_DIR,
   output: {
     path: DIST_DIR,
-    filename: "bundle.js"
+    filename: "bundle2.js"
   },
   module: {
     rules: [
