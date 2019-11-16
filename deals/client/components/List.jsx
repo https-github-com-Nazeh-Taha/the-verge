@@ -8,8 +8,19 @@ export default class List extends Component {
     this.state = {
       deals: []
     };
+  }
+  componentDidMount(){
+    this.getData();
+  }
+  getData(){
+    console.log(this.state.data);
+    var that = this;
+    var path = window.location.href.split("=");
+    var id = path[1];
+    console.log(id);
+    
     $.ajax({
-      url: "/deals",
+      url: "/deals/"+id,
       type: "GET",
       data:this.state,
       success: function (data) {
@@ -37,7 +48,7 @@ export default class List extends Component {
                 </span>
             </h3>
             <div className="c-list__body">
-              <ol>
+              <ol className="orderedlist">
                 <div>
                   {this.state.deals.map(item => {
                     return <li key={item.id}>
