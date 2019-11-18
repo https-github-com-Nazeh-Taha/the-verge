@@ -5,6 +5,8 @@ import Post from "./components/Post.jsx";
 import Nav from "./components/Nav.jsx";
 import Next from "./components/Next.jsx";
 import "../public/style.css";
+
+
 class Article extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,10 @@ class Article extends React.Component {
       topic: [],
       auth: []
     }
+    
+  }
+
+  componentDidMount(){
     this.retriveData();
   }
 
@@ -25,10 +31,14 @@ class Article extends React.Component {
     
   }
 
+
   retriveData(){
+    
     var that = this;
+    var path = window.location.href.split("=");
+    var article_id = path[1];
     $.ajax({
-      url: "/article",
+      url: "/article/"+article_id,
       method: "GET",
       success: function(data){
         that.updateState(data)
@@ -37,6 +47,17 @@ class Article extends React.Component {
         console.log(error);
       }
     })
+    
+    // $.ajax({
+    //   url: "/article",
+    //   method: "GET",
+    //   success: function(data){
+    //     that.updateState(data)
+    //   },
+    //   error: function(error){
+    //     console.log(error);
+    //   }
+    // })
   }
 
   render() {
@@ -47,6 +68,7 @@ class Article extends React.Component {
         <Next article = {this.state.articls} />
       </div>
     );
+    
   }
 }
 ReactDOM.render(<Article />, document.getElementById("post"));
