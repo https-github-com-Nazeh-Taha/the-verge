@@ -16,7 +16,7 @@ const Schema = mongoose.Schema;
 
 const commentSchema = Schema({
 	postId: {
-		type: Number
+		type: String
 	},
   profilePic:{
     type: String

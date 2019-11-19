@@ -24,14 +24,17 @@ const CommentDB = require('../database/db.js');
 
 
 
-app.get('/comments', (req, res) => {
+app.get('/comments/:id', (req, res) => {
+  
+  var id = req.params.id;
 
-  CommentDB.CommentModel.find({postId: 1 }, function(err, data){
+  CommentDB.CommentModel.find({postId: id }, function(err, data){
     if (err) {
-    console.log('Error');
-      }
+      console.log('Error');
+    }
     res.json(data);
-  });
+  })
+});
   
   // CommentDB.findAll(function(err, allComments){
   //   if(err) {
